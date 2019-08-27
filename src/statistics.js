@@ -1,7 +1,7 @@
 import { canvasProps, maxIterations } from './constants'
 
 const pointsStats = points => {
-    const flatPoints = points.flat();
+    const flatPoints = points.flat().map(item => item.n);
 
     let data = [
         totalIterations(flatPoints),

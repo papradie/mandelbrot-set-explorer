@@ -8,7 +8,6 @@ const calculatePoints = viewport => {
             points[i][j] = iterate(viewport.x.min + viewport.x.step * i, viewport.y.min + viewport.y.step * j, maxIterations);
         }
     }
-
     return points;
 }
 
@@ -26,7 +25,7 @@ const iterate = (real, imaginary, maxIterations) => {
 
         i++;
     }
-    return i;
+    return { n: i, real: zReal, imag: zImag };
 }
 
 export { calculatePoints }

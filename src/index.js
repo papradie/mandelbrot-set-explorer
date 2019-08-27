@@ -23,7 +23,6 @@ window.zoom = event => {
     redrawWithPerf();
 }
 
-
 const redraw = (viewport) => {
     // calculate all points in viewport
     const points = withPerf(calculatePoints, [viewport]);
