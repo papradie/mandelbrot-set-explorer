@@ -22,15 +22,13 @@ const drawScene = points => {
     }
 }
 
-const rgbToHex = (r, g, b) => "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
-
 const binaryColoring = (point, maxIterations) => point.n < maxIterations
     ? '#000000'
     : '#ffffff';
 
 const bwColoring  = (point, maxIterations) => {
     const color = 255 - Math.floor(point.n * 255 / maxIterations);
-    return rgbToHex(color, color, color);
+    return `rgb(${color}, ${color}, ${color})`;
 }
 
 const makePalette = () => {
