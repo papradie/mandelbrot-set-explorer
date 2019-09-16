@@ -14,12 +14,10 @@ const getCanvasContext = () => {
 const drawScene = points => {
     const context = getCanvasContext();
 
-    for (let i = 0; i < canvasProps.width; i++) {
-        for (let j = 0; j < canvasProps.height; j++) {
-            context.fillStyle = coloringFn(points[i][j], maxIterations);
-            context.fillRect(i, j, 1, 1);
-        }
-    }
+    points.map(point => {
+        context.fillStyle = coloringFn(point, maxIterations);
+        context.fillRect(point.i, point.j, 1, 1);
+    });
 }
 
 const binaryColoring = (point, maxIterations) => point.n < maxIterations
